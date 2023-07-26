@@ -11,12 +11,35 @@ const App: React.FC = () => {
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
     if (todo) {
-      setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
+      const randomTask = catTasks[Math.floor(Math.random() * catTasks.length)];
+      setTodos([...todos, { id: Date.now(), todo: randomTask, isDone: false }]);
       setTodo("");
     }
   };
 
-  console.log(todo);
+  const catTasks = [
+    "Chase invisible mice",
+    "Take a 5-hour nap",
+    "Plot world domination",
+    "Knock stuff off tables",
+    "Practice stealth mode",
+    "Hunt for the red dot",
+    "scratch sensitive things",
+    "Stare at the wall",
+    "meow",
+    "meow",
+    "meeeoow",
+    "meowmeow",
+    "woof?",
+    "MEEEEOOOWW",
+    "lick",
+    "attack",
+    "ATTACK",
+    "clean fur",
+    "eat food",
+    "blink",
+    "stick claws into the expensive sofa",
+  ];
 
   return (
     <div className="App">
